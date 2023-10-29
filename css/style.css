@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.border-structure {
+  border-radius: 30px;
+  padding: 10px;
+}
+.border-style {
+  border: 1px solid #ccc; 
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.01fr 1fr 0.05fr;
+  gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas: 
+  "header header header"
+  "main main main"
+  "footer footer footer";
+}
+
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+  grid-template-areas: 
+  "logo name menu";
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: center;
+  align-self: center;
+}
+
+.name {
+  grid-area: name;
+  justify-self: center;
+  align-self: center;
+}
+
+.name-header {
+  font-size: 32px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  grid-area: menu;
+  justify-items: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.text-font-lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+}
+
+.menu div a:hover {
+  color: #7fff00;
+  text-decoration: underline;
+}
+
+
+.main {
+  display: grid;
+  grid-area: main;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  grid-template-areas: 
+  "aside-main article aside-additional";
+}
+
+.p-decoration {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.h-decotation {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+.aside-main { grid-area: aside-main; align-self: start;}
+.article { grid-area: article; align-self: start;}
+.aside-additional { grid-area: aside-additional; align-self: start;}
+
+.image {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  border-radius: 2px;
+  margin-top: 24px;
+}
+
+.image_goblin {
+  background-image: url('../img/goblin_crown.jpg')
+}
+
+.image_king {
+  background-image: url('../img/king_goblin.jpg')
+}
+
+.article-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  gap: 50px;
+  grid-template-areas: 
+  "image text";
+}
+
+.list {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+}
+
+.list ul {
+  list-style: none;
+  padding: 2px;
+  margin: -3px;
+}
+
+.list ul li a:hover {
+  color: #7fff00;
+  text-decoration: underline;
+}
+
+
+.footer {
+  display: grid;
+  grid-area: footer;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-template-areas: 
+  "logo icons";
+}
+
+.social-icons {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}
+
+.social-icon {
+  justify-self: center;
+  align-self: center;
+}
+
+.social-icon-style {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}
+
+.instagram {
+  color: #E4405F;
+}
+
+.facebook {
+  color: #1877F2;
+}
+
+.twitter {
+  color: #1DA1F2;
+}
+
+.contact-us {
+  justify-self: center;
+  align-self: center;
+  margin: 1px;
+}
+
+.contact-us-style {
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "name name"
+    "logo menu";
+  }
+  .main {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, 0.1fr);
+    grid-template-areas: 
+    "aside-main article"
+    "aside-additional aside-additional";
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "logo"
+    "name"
+    "menu";
+  }
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 0.1fr);
+    grid-template-areas: 
+    "aside-main"
+    "article"
+    "aside-additional";
+  }
+  .contact-us-style {
+    font-size: 18px;
+  }
+  .social-icon-style {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .article-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 0.1fr);
+    gap: 0px;
+    grid-template-areas:
+    "image"
+    "text";
+  }
+}
